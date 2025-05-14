@@ -1,9 +1,21 @@
 # CODERHOUSE - CAFETERÍA
 ---
 
-Pequeña **descripción**
-### Descripción más pequeña
+##### Por: Gonzales Asencios María Fernanda
 
-- Lista 1
-- Lista 2
-- Lista 3
+---
+
+Este repositorio está hecho con la finalidad de representar una idea de web de cafetería con **funciones básicas para mostrar datos** y representación de **transacciones**.
+
+---
+
+### Partes principales:
+
+- Menú
+- Venta de productos
+- Novedades y noticias
+- Reseñas
+
+---
+
+### Nota:
