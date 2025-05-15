@@ -187,6 +187,9 @@ a{
     
 }
 
+.Header-Navbar__Navegacion:hover{
+    text-decoration:underline;
+}
 
 
 
@@ -260,10 +263,17 @@ a{
     justify-content: end;
 }
 
+#Principal-Boton__detalles:hover{
+    background-color: rgb(10, 196, 196);
+    font-weight: bold;
+}
+
 #Principal-Boton__detalles{
     height: 4rem;
     width: 15rem;
     border-radius: 0.5rem;
+    border-style: solid;
+    border-color: black;
     background-color: black;
     color: beige;
     font-size: 1.5rem;
@@ -425,7 +435,7 @@ a{
 
 @media(width<1400px){
     .Contenedor-Menú{
-        margin: 0;
+        margin: 2;
     }
 }
 
@@ -546,6 +556,10 @@ hr{
     border-radius: 1rem;
 }
 
+#Menu1-Cafe__Boton:hover{
+    background-color:rgb(73, 173, 148) ;
+}
+
 .Menu2{
     height: 74rem;
     grid-area: Menu2;
@@ -600,13 +614,13 @@ hr{
 
 @media(width<1400px){
     .Contenedor-novedades{
-        margin: 0;
+        margin: 2;
     }
 }
 
 
 .Carrusel{
-    height: 40vh;
+    height: 50vh;
     grid-area: Carrusel;
     background-color: aquamarine;
     display: flex;
@@ -622,15 +636,100 @@ hr{
 
 
 .Suscripcion{
-    height: 50rem;
-    background-color: rgb(144, 123, 123);
+    height: max-content;
+    width: 100%;
+    padding: 4rem;
+    gap: 2rem;
+    background-color: beige;
+    border-radius: 1rem;
+    border-width: 0.3rem;
+    border-color: rgb(117, 117, 117);
+    border-style:solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Suscripcion-Titulo{
+    width: 60%;
+    align-content:center;
+    justify-content: center;
+    text-align: center;
+    padding: 0rem 4rem 0rem 4rem;
+}
+
+.Suscripcion-imagen{
+    background-image: url(../images/Capucchino\ -\ Suscripcion.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+    height: 25rem;
+    display: flex;
+}
+
+.Suscripcion-formulario{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    padding: ;
+    gap: 0.5rem;
+}
+
+.Suscripcion-rellenar{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.Suscripcion-rellenar__titulo{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1rem;
+}
+
+#Suscripción-rellenar__input{
+    width:100%;
+    background-color:azure;
+    border-radius: 0.25rem;
+    height: 3rem;
+    font-size: 1.2rem;
+    padding: 0rem 1rem 0rem 1rem;
+    flex-shrink: 1;
+}
+
+#Suscripción-rellenar__input:focus{
+    border-color: rgb(207, 241, 255);
+    border-width: 0.2rem;
+    background-color: rgb(175, 255, 235);
 }
 
 
-@media (width<512px){
+.Suscripcion-boton--posicion{
+    display: flex;
+    justify-content: end;
+    align-content: end;
+    margin-top: 3rem;
+}
+
+#Suscripcion-boton{
+    width: 10rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+    background-color: rgb(29, 27, 27);
+    color: beige;
+    font-size: 1.2rem;
+}
+
+#Suscripcion-boton:hover{
+    background-color: rgb(73, 173, 148);
+    font-weight: bolder;
+}
+
+@media(width<512px){
     .Suscripcion{
         margin: 0rem 1rem 0rem 1rem;
-        gap:1rem
+        gap: 1rem;
     }
 }
 
@@ -795,6 +894,7 @@ hr{
     .Card-Texto{
 
     }
+
     .Card-Button{
         width: 8rem;
     }
@@ -922,7 +1022,7 @@ hr{
 
 @media(width<1400px){
     .Contenedor-reseñas{
-        margin: 0;
+        margin: 2;
     }
 }
 
@@ -950,17 +1050,19 @@ hr{
     height: 18rem;
     display: grid;
     grid-template-columns: repeat(7,1fr);
-    grid-template-areas: "Card-Reseñas__Información Card-Reseñas__Información Card-Reseñas__Texto Card-Reseñas__Texto Card-Reseñas__Texto Card-Reseñas__Texto Card-Reseñas__Valoracion";
+    grid-template-areas: "Card-Reseñas__Información Card-Reseñas__Información Card-Reseñas__Texto Card-Reseñas__Texto Card-Reseñas__Texto Card-Reseñas__Texto Card-Reseñas__Botones";
     border-radius: 1.25rem;
     gap: 2rem;
 }
 
 @media (width<512px){
     .Card-Reseñas{
+        height: max-content;
         border-radius: 1rem;
-        grid-template-columns: repeat(5,1fr);
+        grid-template-columns: repeat(3,1fr);
         gap:1rem;
-        grid-template-areas:"Card-Reseñas__Información Card-Reseñas__Texto Card-Reseñas__Texto Card-Reseñas__Texto Card-Reseñas__Valoracion";
+        grid-template-areas:"Card-Reseñas__Información   Card-Reseñas__Texto       Card-Reseñas__Texto"
+                            "Card-Reseñas__Botones       Card-Reseñas__Botones    Card-Reseñas__Botones";
         border-radius: 1.25rem;
     }
 }
@@ -1075,6 +1177,7 @@ hr{
 
 @media (width<512px){
     .Card-Reseñas__Texto{
+        padding: 1rem 2rem 1rem 0rem;
         font-size: 1rem;
         width: 100%;
     }
@@ -1107,10 +1210,14 @@ hr{
 
 
 #Card-Reseñas__Valoracion{
-    grid-area: Card-Reseñas__Valoracion;
+    font-size: 1rem;
 }
 
-
+@media (width<512px){
+    #Card-Reseñas__Valoracion{
+        font-size: 0.7rem;
+    }
+}
 
 .Card-Reseñas__TextodeReseña{
     height: 7rem;
@@ -1121,7 +1228,7 @@ hr{
 
 @media (width<512px){
     .Estrellas{
-        height: 1rem;
+        height: 2rem;
         font-size: 0.8rem;
     }
     .Iconos{
@@ -1130,9 +1237,11 @@ hr{
     }
     #Card-reseñas__Valoracion{
         margin-left: 1rem;
+        display: block;
     }
     .Card-Reseñas__TextodeReseña{
         overflow: scroll;
+        height: 8rem;
     }
 }
 
@@ -1140,8 +1249,8 @@ hr{
 
 
 .Card-Reseñas__Botones{
+    grid-template-areas: Card-Reseñas__Botones;
     background-color: rgb(88, 78, 78);
-    height: 100%;
     border-radius: 0rem 1.25rem 1.25rem 0rem;
     display: flex;
     flex-direction: column;
@@ -1158,10 +1267,12 @@ hr{
 
 @media (width<512px){
     .Card-Reseñas__Botones{
-        border-radius: 0;
-        height: 100%;
-        width: 100%;
+        grid-template-areas: Card-Reseñas__Botones;
+        flex-direction: row;
+        height: 5rem;
+        height: 4rem;
         padding: 0.5rem;
+        gap: 2rem;
     }
 
     .Deacuerdo{
