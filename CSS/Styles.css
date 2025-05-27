@@ -1,1355 +1,1049 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+a {
+  text-decoration: none;
+  color: beige;
+}
 
-*{
+.h1 {
+  font-size: 2.5rem;
+}
+
+.h2 {
+  font-size: 2.25rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.h3 {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.h6 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: beige;
+}
+
+.h6_2 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: rgb(0, 0, 0);
+}
+
+.S1 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: bolder;
+  font-size: 1rem;
+  color: beige;
+}
+
+.body1 {
+  color: beige;
+  list-style: none;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 14x;
+}
+
+.Contenedor-Principal {
+  display: grid;
+  gap: 2rem;
+  margin: 0rem 4rem 0rem 4rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: " Header    Header " "Section1  Section2 " " Footer    Footer ";
+}
+
+@media (width < 512px) {
+  .Contenedor-Principal {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: "Header" "Section1" "Section2" "Footer";
     margin: 0;
-    padding: 0 ;
-    box-sizing: border-box;
-}
-
-a{    
-    text-decoration: none;
-    color: beige;
-}
-
-.h1{
-    font-size: 2.5rem;
-}
-
-.h2{
-    font-size: 2.25rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
-}
-
-.h3{
-    font-family:'Courier New', Courier, monospace;
-    font-size: 2rem;
-    font-weight: bolder;
-}
-
-
-.h6{
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 500;
-    font-size: 1rem;
-    color: beige;
-}
-.h6_2{
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 400;
-    font-size: 1rem;
-    color: rgb(0, 0, 0);
-
-}
-
-
-.S1{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: bolder;
-    font-size: 1rem;
-    color: beige;
-}
-
-.body1{
-    color: beige;
-    list-style: none;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 14x;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-.Contenedor-Principal{
-    display: grid;
-    gap: 2rem;
-    margin: 0rem 4rem 0rem 4rem;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-areas:
-    " Header    Header "
-    "Section1  Section2 "
-    " Footer    Footer ";
-}
-
-
-
-@media (width<512px) {
-    .Contenedor-Principal{
-        grid-template-columns: repeat(1,1fr);
-        grid-template-areas: 
-        "Header"
-        "Section1"
-        "Section2"
-        "Footer";
-        margin: 0;
-        gap: 1rem;
-    }
-}
-
-@media(width<1400px){
-    .Contenedor-Principal{
-        margin: 0;
-    }
-}
-
-
-.Header{
-    background-color: rgb(60, 54, 46);
-    position: sticky;
-    top:0;
-    height: 10vh;
-    grid-area: Header;
-    display:flex;
-    justify-content: space-between;
-    align-items:center;
-    display: grid;
-    grid-template-columns: repeat(2,2fr);
-    grid-template-areas: "Header-logo Header-NavBar";
-
-
-}
-
-
-
-
-@media (width<512px) {
-    .Header{
-        grid-template-areas:
-        "Header-logo"
-        "Header-NavBar";
-        height: 20vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-}
-
-
-
-
-
-.Header-logo{
-    font-family:'Courier New', Courier, monospace;
-    font-size: 1.5rem;
-    color: beige;
-    width: 12rem;
-    height: 2rem;
-    margin: 1rem 2rem 1rem 2rem;
-    align-content: center;
-    justify-content: center;
-    grid-area:Header-logo;
-}
-
-@media (width<512px){
-    .Header-logo{
-        display: flex;
-        align-content: center;
-        justify-content: center;
-        margin: 2rem 2rem 0rem 2rem;
-
-    }
-}
-
-.Header-NavBar{
-    display: flex;
-    grid-area:Header-NavBar;
-}
-
-
-@media (width<512px) {
-
-    .Header-NavBar{
-        margin:2rem 2rem 2rem 2rem;
-    }
-
-}
-
-
-.Header-Navbar__Navegacion{
-    margin: 0rem 1rem 0rem 1rem;
-    width: 6rem;
-    height: 2rem;
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    
-}
-
-.Header-Navbar__Navegacion:hover{
-    text-decoration:underline;
-}
-
-
-
-@media (width<512px) {
-    .Header-Navbar__Navegacion{
-        width: max-content;
-
-    }
-
-}
-
-
-
-
-
-.Section1{
-    background-color: rgb(110, 196, 196);
-    grid-area: Section1 ;
-    height: 90vh;
-}
-
-
-
-@media (width<512px) {
-
-    .Section1{
-        height: 50vh;
-        margin: 0rem 1rem 0rem 1rem;
-    }
-
-}
-
-
-
-
-
-
-
-
-
-#Principal-Titulo{
-    width: 100%;
-}
-
-@media(width<512px){
-    .h1{
-        text-align: center;
-        font-size: 2rem;
-    }
-}
-
-
-.Principal-Texto{
-    width: 100%;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 1.5rem;
-    text-align: left;
-    overflow: hidden;
-}
-
-@media(width<512px){
-    .Principal-Texto{
-        text-align: center;
-        font-size: 1.2rem;
-    }
-}
-
-#Principal-Boton{
-    width: 100%;
-    display: flex;
-    justify-content: end;
-}
-
-#Principal-Boton__detalles:hover{
-    background-color: rgb(10, 196, 196);
-    font-weight: bold;
-}
-
-#Principal-Boton__detalles{
-    height: 4rem;
-    width: 15rem;
-    border-radius: 0.5rem;
-    border-style: solid;
-    border-color: black;
-    background-color: black;
-    color: beige;
-    font-size: 1.5rem;
-}
-
-@media(width<512px){
-    #Principal-Boton{
-        justify-content: center;
-    }
-    #Principal-Boton__detalles{
-        width: 100%;
-    }
-}
-
-
-.Section2{
-    grid-area: Section2 ;
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 2rem;
-}
-
-
-
-@media (width<512px) {
-
-    .Section2{
-        height: max-content;
-
-    }
-
-}
-
-
-
-.Footer{
-    background-color: rgb(60, 54, 46);
-    grid-area: Footer;
-    height: 14rem;
-    padding: 2rem 4rem 2rem 4rem;
-    justify-content: space-between;
-    display: grid;
-    grid-template-areas: "Footer1 Footer2";
-
-}
-
-.Footer-Información__grupal{
-    grid-area: Footer1;
-    display: flex;
-    gap: 2rem;
-}
-
-.Footer-Información{
-    list-style-type: none;
-    font-weight: bold;
-}
-
-#Footer-Información__contenido{
-    font-weight: 100;
-    list-style-type: none;
-    margin-top: 1rem;
-}
-
-.Footer-Posterior{
-    grid-area: Footer2;
-    background-image: url(../images/Libro\ de\ reclamaciones.avif);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    border-radius: 1rem;
-    height: 10rem;
-    width: 18rem;
-    background-color: beige;
-}
-
-@media (width<512px){
-        .Footer{
-        grid-template-areas:
-        "Footer1"
-        "Footer2";
-        height: max-content;
-        gap: 1rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-        align-items: start;
-        padding: 2rem;
-    }
-
-    .Footer-Información__grupal{
-        align-content: start;
-        justify-content: start;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .Footer-Posterior{
-        height: 5rem;
-        width: 9rem;
-        display: flex;
-        justify-content: center;
-        align-content: center;
-    }
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.Contenedor-Menú{
-    display: grid;
-    gap: 2rem;
-    margin: 0rem 4rem 0rem 4rem;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-areas: 
-    "Header Header"
-    "Navegacion Navegacion"
-    "Menu1 Menu2"
-    "Footer Footer";
-}
-
-@media (width<512px){
-
-    .Contenedor-Menú{
-        grid-template-columns: repeat(1,1fr);
-        grid-template-areas: 
-        "   Header  "
-        " Navegacion   "
-        "   Menu1  "
-        "   Menu2  "
-        "   Footer";
-        gap: 1rem;
-        margin: 0;
-    }
-}
-
-
-@media(width<1400px){
-    .Contenedor-Menú{
-        margin: 2;
-    }
-}
-
-#Navegacion{
-    height: 6rem ;
-    grid-area: Navegacion;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.Navegacion-lista{
-    list-style: none;
-    height: 4rem;
-    gap: 2rem;
-    display: flex;
-}
-
-.Navegacion-lista__especifico{
-    width: 14rem;
-    text-align: center;
-    align-content: center;
-}
-
-@media (width<512px){
-    #Navegacion{
-        align-items: center;
-        height: 4rem; 
-    }
-    .h2{
-        font-size: 2rem;
-    }
-    .Navegacion-lista{
-        gap: 1rem;
-        display: flex;
-        justify-content: center;
-    }
-    .Navegacion-lista__especifico{
-        width: 10rem;
-    }
-}
-
-
-hr{
-    margin-top: 1rem;
-    width: 100%;
-    height: 4px;
-    background-color: black;
-}
-
-
-@media (width<512px){
-    hr{
-        margin-top: 0;
-    }
-}
-
-
-
-
-.Menu1{
-    grid-area: Menu1;
-    height: 74rem;
-    background-color: rgb(207, 172, 138);
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    border-radius: 0.5rem;
-}
-
-@media (width<512px){
-    .Menu1{
-        gap: 1rem;
-        margin: 1rem;
-    }
-}
-
-.Menu1-Cafe{
-    background-color: rgb(229, 220, 212);
-    padding: 2rem;
-    width: 100%;
-    height: 40rem;
-    border-radius: 0.5rem;
-}
-
-#Menu1-Te{
-    height: 28rem;
-}
-.Menu1-Cafe__Tittle{
-    height: 2rem;
-}
-
-.Menu1-Cafe__Product{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 2rem;
-    margin: 2rem 2rem 2rem 2rem ;
-
-
-}
-
-#Menu1-Cafe__Subtitulo{
-    width:50%;
-    overflow: hidden;
-    align-content: center;
-    color: black;
-}
-
-#Menu1-Cafe__Boton{
-    background-color: rgb(81, 76, 69);
-    color: beige;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: bold;
-    height: 2rem;
-    width: 10rem;
-    border-radius: 1rem;
-}
-
-#Menu1-Cafe__Boton:hover{
-    background-color:rgb(73, 173, 148) ;
-}
-
-.Menu2{
-    height: 74rem;
-    grid-area: Menu2;
-    background-color: rgb(207, 172, 138);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.Contenedor-novedades{
-    display: grid;
-    margin: 0rem 4rem 0rem 4rem;
-    gap: 2rem;
-    grid-template-areas: 
-    "    Header "
-    "  Navegacion  "
-    "   Carrusel"
-    "  Suscripcion"
-    "   Footer  ";
-}
-
-@media (width<512px){
-    .Contenedor-novedades{
-        margin: 0;
-        gap: 1rem;
-    }
-}
-
-@media(width<1400px){
-    .Contenedor-novedades{
-        margin: 2;
-    }
-}
-
-
-.Carrusel{
-    height: 50vh;
-    grid-area: Carrusel;
-    background-color: aquamarine;
-    display: flex;
-    gap: 2rem;
-}
-
-@media (width<512px){
-    .Carrusel{
-        margin: 0rem 1rem 0rem 1rem;
-        gap:1rem
-    }
-}
-
-
-.Suscripcion{
-    height: max-content;
-    width: 100%;
-    padding: 4rem;
-    gap: 2rem;
-    background-color: beige;
-    border-radius: 1rem;
-    border-width: 0.3rem;
-    border-color: rgb(117, 117, 117);
-    border-style:solid;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.Suscripcion-Titulo{
-    width: 60%;
-    align-content:center;
-    justify-content: center;
-    text-align: center;
-    padding: 0rem 4rem 0rem 4rem;
-}
-
-.Suscripcion-imagen{
-    background-image: url(../images/Capucchino\ -\ Suscripcion.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    width: 100%;
-    height: 25rem;
-    display: flex;
-}
-
-.Suscripcion-formulario{
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    padding: ;
-    gap: 0.5rem;
-}
-
-.Suscripcion-rellenar{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.Suscripcion-rellenar__titulo{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 1rem;
-}
-
-#Suscripción-rellenar__input{
-    width:100%;
-    background-color:azure;
-    border-radius: 0.25rem;
-    height: 3rem;
-    font-size: 1.2rem;
-    padding: 0rem 1rem 0rem 1rem;
-    flex-shrink: 1;
-}
-
-#Suscripción-rellenar__input:focus{
-    border-color: rgb(207, 241, 255);
-    border-width: 0.2rem;
-    background-color: rgb(175, 255, 235);
-}
-
-
-.Suscripcion-boton--posicion{
-    display: flex;
-    justify-content: end;
-    align-content: end;
-    margin-top: 3rem;
-}
-
-#Suscripcion-boton{
-    width: 10rem;
-    height: 3rem;
-    border-radius: 0.5rem;
-    background-color: rgb(29, 27, 27);
-    color: beige;
-    font-size: 1.2rem;
-}
-
-#Suscripcion-boton:hover{
-    background-color: rgb(73, 173, 148);
-    font-weight: bolder;
-}
-
-@media(width<512px){
-    .Suscripcion{
-        margin: 0rem 1rem 0rem 1rem;
-        gap: 1rem;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.Contenedor-productos{
-    display: grid;
-    margin: 0rem 4rem 0rem 4rem;
-    gap: 2rem;
-    grid-template-columns: repeat(5,1fr);
-    grid-template-areas: 
-    "      Header  Header   Header Header Header "
-    "    Navegacion  Navegacion Navegacion Navegacion Navegacion "
-    "  Seleccionador Seleccionador Seleccionador Seleccionador Seleccionador"
-    "      Filtros Productos Productos Productos Productos "
-    "     Footer Footer Footer Footer Footer";
-}
-
-
-@media (width<512px){
-    .Contenedor-productos{
-        grid-template-columns:repeat(1,1fr) ;
-        grid-template-areas: 
-    "      Header   "
-    "    Navegacion "
-    "      Filtros "
-    "  Seleccionador"
-    "    Productos"
-    "     Footer ";
-        margin: 0;
-        gap: 1rem;
-    }
-}
-
-.Seleccionador{
-    grid-area: Seleccionador;
-    display: flex;
-    justify-content: end;
-    height: 2rem;
-}
-
-.Seleccionador-detalles{
-
-    border-radius: 0.5rem;
-}
-
-@media (width<512px){
-    .Seleccionador{
-        margin: 0rem 1rem 0rem 1rem;
-    }
-}
-
-
-
-.Productos{
-    grid-area: Productos;
-    height: max-content;
-    display: flex;
-    gap: 2rem;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
-}
-
-
-.Card{
-    width: 15.7rem;
-    height: 25rem;
-    background-color: burlywood;
-    border-radius: 0.5rem;
-}
-
-
-.Card-Imagen{
-    background-image: url(../Images/producto3.jpg);
-    background-size:cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 13rem;
-    border-radius: 0.5rem 0.5rem 0rem 0rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
-}
-
-.Card-Texto{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.Card-Texto__Titulo{
-    display: block;
-    font-size: 1rem;
-    font-weight: bold;
-    display: block;
-    padding: 1rem 1rem 1rem 1rem;
-}
-
-.Card-Content{
-    font-size: 10px;
-    padding: 0 1rem 1rem 1rem;
-}
-
-.Card-Price{
-    font-size: 1.25rem;
-    font-weight:bolder;
-    display: block;
-    padding: 0rem 1rem 0rem 1rem;
-}
-
-.Card-Button{
-    font-size: 1rem;
-    text-align: center;
-    background-color:black;
-    width: 13rem;
-    height: 2rem;
-    color: bisque;
-    margin: 1rem 1rem 1rem 1rem;
-}
-
-@media (width<512px){
-    .Productos{
-        margin: 1rem;
-        height: max-content;
-    }
-
-    .Card{
-        height: 14rem;
-        width: 100%;
-        display: flex;
-    }
-
-    .Card-disposicion{
-        display: flex;
-        flex-direction: column;
-        justify-content:space-evenly;
-    }
-
-    .Card-Imagen{
-        width: 80%;
-        height: 100%
-        
-    }
-    .Card-Texto{
-
-    }
-
-    .Card-Button{
-        width: 8rem;
-    }
-}
-
-
-
-
-.Filtros{
-    grid-area: Filtros ;
-    height: 50rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.Filtros-apariencia{
-    width: 100%;
-    height: 4rem;
-    padding: 1rem;
-    background-color: beige;
-    display: flex;
-    align-items: center;
-    justify-items: center;
     gap: 1rem;
-    border-radius: 0.5rem;
-    font-weight: bold;
+  }
+}
+@media (width < 1400px) {
+  .Contenedor-Principal {
+    margin: 0;
+  }
+}
+.Header {
+  background-color: rgb(60, 54, 46);
+  position: sticky;
+  top: 0;
+  height: 10vh;
+  grid-area: Header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  grid-template-areas: "Header-logo Header-NavBar";
 }
 
-
-@media (width<512px){
-    .Filtros{
-        margin: 1rem;
-        height: max-content;
-        gap: 1rem;
-    .Filtros-apariencia{
-        height: 3rem;
-    }
-    }
+@media (width < 512px) {
+  .Header {
+    grid-template-areas: "Header-logo" "Header-NavBar";
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.Header-logo {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.5rem;
+  color: beige;
+  width: 12rem;
+  height: 2rem;
+  margin: 1rem 2rem 1rem 2rem;
+  align-content: center;
+  justify-content: center;
+  grid-area: Header-logo;
 }
 
-
-.icono-carrito{
-    height: 2.5rem;
-    width: 2.5rem;
-    background-image: url(../images/Carrito.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
+@media (width < 512px) {
+  .Header-logo {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin: 2rem 2rem 0rem 2rem;
+  }
+}
+.Header-NavBar {
+  display: flex;
+  grid-area: Header-NavBar;
 }
 
-.icono-catalogo{
-    height: 2.5rem;
-    width: 2.5rem;
-    background-image: url(../images/Catálogo.svg);
-        background-repeat: no-repeat;
-    background-size: contain;
+@media (width < 512px) {
+  .Header-NavBar {
+    margin: 2rem 2rem 2rem 2rem;
+  }
+}
+.Header-Navbar__Navegacion {
+  margin: 0rem 1rem 0rem 1rem;
+  width: 6rem;
+  height: 2rem;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 
-.icono-whatsapp{
-    height: 2.5rem;
-    width: 2.5rem;
-    background-image: url(../images/Whatsapp.png);
-    background-repeat: no-repeat;
-    background-size: contain;
+.Header-Navbar__Navegacion:hover {
+  text-decoration: underline;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.Contenedor-reseñas{
-    display: grid;
-    margin: 0rem 4rem 0rem 4rem;
-    gap: 2rem;
-    grid-template-columns: repeat(10,1fr);
-    grid-template-areas: 
-    "    Header Header Header Header Header Header Header Header Header Header "
-    "  Navegacion Navegacion Navegacion Navegacion Navegacion Navegacion Navegacion Navegacion Navegacion Navegacion "
-    "   Seleccionador  Seleccionador  Seleccionador  Seleccionador  Seleccionador  Seleccionador  Seleccionador  Seleccionador  Seleccionador  Seleccionador"
-    "  Reseñas Reseñas Reseñas Reseñas Reseñas Reseñas Reseñas Comentario Comentario Comentario"
-    "   Footer Footer Footer Footer Footer Footer Footer Footer Footer Footer ";
+@media (width < 512px) {
+  .Header-Navbar__Navegacion {
+    width: max-content;
+  }
+}
+.Section1 {
+  background-color: rgb(110, 196, 196);
+  grid-area: Section1;
+  height: 90vh;
 }
 
-
-@media (width<512px){
-    .Contenedor-reseñas{
-        grid-template-columns:repeat(1,1fr) ;
-        grid-template-areas: 
-    "      Header   "
-    "    Navegacion "
-    "     Comentario "
-    "  Seleccionador"
-    "    Reseñas"
-    "     Footer ";
-        margin: 0;
-        gap: 1rem;
-    }
-
-
+@media (width < 512px) {
+  .Section1 {
+    height: 50vh;
+    margin: 0rem 1rem 0rem 1rem;
+  }
+}
+#Principal-Titulo {
+  width: 100%;
+  font: 2.5rem bold system-ui;
 }
 
-
-@media(width<1400px){
-    .Contenedor-reseñas{
-        margin: 2;
-    }
+@media (width < 512px) {
+  .h1 {
+    text-align: center;
+    font-size: 2rem;
+  }
+}
+.Principal-Texto {
+  width: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.5rem;
+  text-align: left;
+  overflow: hidden;
 }
 
+@media (width < 512px) {
+  .Principal-Texto {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+}
+#Principal-Boton {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
 
+#Principal-Boton__detalles:hover {
+  background-color: rgb(10, 196, 196);
+  font-weight: bold;
+}
 
-#Reseñas{
-    grid-area: Reseñas;
+#Principal-Boton__detalles {
+  height: 4rem;
+  width: 15rem;
+  border-radius: 0.5rem;
+  border-style: solid;
+  border-color: black;
+  background-color: black;
+  color: beige;
+  font-size: 1.5rem;
+}
+
+@media (width < 512px) {
+  #Principal-Boton {
+    justify-content: center;
+  }
+  #Principal-Boton__detalles {
+    width: 100%;
+  }
+}
+.Section2 {
+  grid-area: Section2;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+@media (width < 512px) {
+  .Section2 {
     height: max-content;
+  }
+}
+.Footer {
+  background-color: rgb(60, 54, 46);
+  grid-area: Footer;
+  height: 14rem;
+  padding: 2rem 4rem 2rem 4rem;
+  justify-content: space-between;
+  display: grid;
+  grid-template-areas: "Footer1 Footer2";
+}
+
+.Footer-Información__grupal {
+  grid-area: Footer1;
+  display: flex;
+  gap: 2rem;
+}
+
+.Footer-Información {
+  list-style-type: none;
+  font-weight: bold;
+}
+
+#Footer-Información__contenido {
+  font-weight: 100;
+  list-style-type: none;
+  margin-top: 1rem;
+}
+
+.Footer-Posterior {
+  grid-area: Footer2;
+  background-image: url(../images/Libro\ de\ reclamaciones.avif);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border-radius: 1rem;
+  height: 10rem;
+  width: 18rem;
+  background-color: beige;
+}
+
+@media (width < 512px) {
+  .Footer {
+    grid-template-areas: "Footer1" "Footer2";
+    height: max-content;
+    gap: 1rem;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-
-@media (width<512px){
-    #Reseñas{
-        gap:2rem;
-        margin:1rem;
-    }
-}
-
-.Card-Reseñas{
-    background-color: rgb(214, 190, 167);
-    width: 100%;
-    height: 18rem;
-    display: grid;
-    grid-template-columns: repeat(7,1fr);
-    grid-template-areas: "Card-Reseñas__Información Card-Reseñas__Información Card-Reseñas__Texto Card-Reseñas__Texto Card-Reseñas__Texto Card-Reseñas__Texto Card-Reseñas__Botones";
-    border-radius: 1.25rem;
-    gap: 2rem;
-}
-
-@media (width<512px){
-    .Card-Reseñas{
-        height: max-content;
-        border-radius: 1rem;
-        grid-template-columns: repeat(3,1fr);
-        gap:1rem;
-        grid-template-areas:"Card-Reseñas__Información   Card-Reseñas__Texto       Card-Reseñas__Texto"
-                            "Card-Reseñas__Botones       Card-Reseñas__Botones    Card-Reseñas__Botones";
-        border-radius: 1.25rem;
-    }
-}
-
-.Card-Reseñas__Información{
-    grid-area: Card-Reseñas__Información;
-    height: 100%;
-    display: flex;
+    justify-content: start;
+    align-items: start;
+    padding: 2rem;
+  }
+  .Footer-Información__grupal {
+    align-content: start;
+    justify-content: start;
     flex-direction: column;
-    align-items: center;
-    padding: 1rem 0rem 1.5rem 0rem;
-    justify-content:space-between;
-    
-}
-
-@media (width<512px){
-    .Card-Reseñas__Información{
-        padding: 1rem
-    }
-}
-
-.Foto-Reseña{
-    background-color: rgb(88, 78, 78);
+    gap: 1rem;
+  }
+  .Footer-Posterior {
+    height: 5rem;
     width: 9rem;
-    height: 9rem;
-    border-radius: 10rem;
+    display: flex;
     justify-content: center;
-    justify-items: center;
+    align-content: center;
+  }
+}
+.Contenedor-Menú {
+  display: grid;
+  gap: 2rem;
+  margin: 0rem 4rem 0rem 4rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "Header Header" "Navegacion Navegacion" "Menu1 Menu2" "Footer Footer";
 }
 
-@media (width<512px){
-    .Foto-Reseña{
-        border-radius: 1rem;
-        width: 5rem;
-        height: 5rem;
-    }
+@media (width < 512px) {
+  .Contenedor-Menú {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: "   Header  " " Navegacion   " "   Menu1  " "   Menu2  " "   Footer";
+    gap: 1rem;
+    margin: 0;
+  }
+}
+@media (width < 1400px) {
+  .Contenedor-Menú {
+    margin: 2;
+  }
+}
+#Navegacion {
+  height: 6rem;
+  grid-area: Navegacion;
+  justify-content: center;
+  align-items: center;
 }
 
-.Card-Reseñas__User{
+.Navegacion-lista {
+  list-style: none;
+  height: 4rem;
+  gap: 2rem;
+  display: flex;
+}
+
+.Navegacion-lista__especifico {
+  width: 14rem;
+  text-align: center;
+  align-content: center;
+}
+
+@media (width < 512px) {
+  #Navegacion {
+    align-items: center;
+    height: 4rem;
+  }
+  .h2 {
+    font-size: 2rem;
+  }
+  .Navegacion-lista {
+    gap: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  .Navegacion-lista__especifico {
     width: 10rem;
-    height: 2rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+}
+hr {
+  margin-top: 1rem;
+  width: 100%;
+  height: 4px;
+  background-color: black;
+}
+
+@media (width < 512px) {
+  hr {
+    margin-top: 0;
+  }
+}
+.Menu1 {
+  grid-area: Menu1;
+  height: 74rem;
+  background-color: rgb(207, 172, 138);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-radius: 0.5rem;
+}
+
+@media (width < 512px) {
+  .Menu1 {
+    gap: 1rem;
+    margin: 1rem;
+  }
+}
+.Menu1-Cafe {
+  background-color: rgb(229, 220, 212);
+  padding: 2rem;
+  width: 100%;
+  height: 40rem;
+  border-radius: 0.5rem;
+}
+
+#Menu1-Te {
+  height: 28rem;
+}
+
+.Menu1-Cafe__Tittle {
+  height: 2rem;
+}
+
+.Menu1-Cafe__Product {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 2rem;
+  margin: 2rem 2rem 2rem 2rem;
+}
+
+#Menu1-Cafe__Subtitulo {
+  width: 50%;
+  overflow: hidden;
+  align-content: center;
+  color: black;
+}
+
+#Menu1-Cafe__Boton {
+  background-color: rgb(81, 76, 69);
+  color: beige;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  height: 2rem;
+  width: 10rem;
+  border-radius: 1rem;
+}
+
+#Menu1-Cafe__Boton:hover {
+  background-color: rgb(73, 173, 148);
+}
+
+.Menu2 {
+  height: 74rem;
+  grid-area: Menu2;
+  background-color: rgb(207, 172, 138);
+}
+
+.Contenedor-novedades {
+  display: grid;
+  margin: 0rem 4rem 0rem 4rem;
+  gap: 2rem;
+  grid-template-areas: "    Header " "  Navegacion  " "   Carrusel" "  Suscripcion" "   Footer  ";
+}
+
+@media (width < 512px) {
+  .Contenedor-novedades {
+    margin: 0;
+    gap: 1rem;
+  }
+}
+@media (width < 1400px) {
+  .Contenedor-novedades {
+    margin: 2;
+  }
+}
+.Carrusel {
+  height: 50vh;
+  grid-area: Carrusel;
+  background-color: aquamarine;
+  display: flex;
+  gap: 2rem;
+}
+
+@media (width < 512px) {
+  .Carrusel {
+    margin: 0rem 1rem 0rem 1rem;
+    gap: 1rem;
+  }
+}
+.Suscripcion {
+  height: max-content;
+  width: 100%;
+  padding: 4rem;
+  gap: 2rem;
+  background-color: beige;
+  border-radius: 1rem;
+  border-width: 0.3rem;
+  border-color: rgb(117, 117, 117);
+  border-style: solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Suscripcion-Titulo {
+  width: 60%;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0rem 4rem 0rem 4rem;
+}
+
+.Suscripcion-imagen {
+  background-image: url(../images/Capucchino\ -\ Suscripcion.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 100%;
+  height: 25rem;
+  display: flex;
+}
+
+.Suscripcion-formulario {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.Suscripcion-rellenar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.Suscripcion-rellenar__titulo {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+}
+
+#Suscripción-rellenar__input {
+  width: 100%;
+  background-color: azure;
+  border-radius: 0.25rem;
+  height: 3rem;
+  font-size: 1.2rem;
+  padding: 0rem 1rem 0rem 1rem;
+  flex-shrink: 1;
+}
+
+#Suscripción-rellenar__input:focus {
+  border-color: rgb(207, 241, 255);
+  border-width: 0.2rem;
+  background-color: rgb(175, 255, 235);
+}
+
+.Suscripcion-boton--posicion {
+  display: flex;
+  justify-content: end;
+  align-content: end;
+  margin-top: 3rem;
+}
+
+#Suscripcion-boton {
+  width: 10rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  background-color: rgb(29, 27, 27);
+  color: beige;
+  font-size: 1.2rem;
+}
+
+#Suscripcion-boton:hover {
+  background-color: rgb(73, 173, 148);
+  font-weight: bolder;
+}
+
+@media (width < 512px) {
+  .Suscripcion {
+    margin: 0rem 1rem 0rem 1rem;
+    gap: 1rem;
+  }
+}
+.Contenedor-productos {
+  display: grid;
+  margin: 0rem 4rem 0rem 4rem;
+  gap: 2rem;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas: "      Header  Header   Header Header Header " "    Navegacion  Navegacion Navegacion Navegacion Navegacion " "  Seleccionador Seleccionador Seleccionador Seleccionador Seleccionador" "      Filtros Productos Productos Productos Productos " "     Footer Footer Footer Footer Footer";
+}
+
+@media (width < 512px) {
+  .Contenedor-productos {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: "      Header   " "    Navegacion " "      Filtros " "  Seleccionador" "    Productos" "     Footer ";
+    margin: 0;
+    gap: 1rem;
+  }
+}
+.Seleccionador {
+  grid-area: Seleccionador;
+  display: flex;
+  justify-content: end;
+  height: 2rem;
+}
+
+.Seleccionador-detalles {
+  border-radius: 0.5rem;
+}
+
+@media (width < 512px) {
+  .Seleccionador {
+    margin: 0rem 1rem 0rem 1rem;
+  }
+}
+.Productos {
+  grid-area: Productos;
+  height: max-content;
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.Card {
+  width: 15.7rem;
+  height: 25rem;
+  background-color: burlywood;
+  border-radius: 0.5rem;
+}
+
+.Card-Imagen {
+  background-image: url(../Images/producto3.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 13rem;
+  border-radius: 0.5rem 0.5rem 0rem 0rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.Card-Texto {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Card-Texto__Titulo {
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+  display: block;
+  padding: 1rem 1rem 1rem 1rem;
+}
+
+.Card-Content {
+  font-size: 10px;
+  padding: 0 1rem 1rem 1rem;
+}
+
+.Card-Price {
+  font-size: 1.25rem;
+  font-weight: bolder;
+  display: block;
+  padding: 0rem 1rem 0rem 1rem;
+}
+
+.Card-Button {
+  font-size: 1rem;
+  text-align: center;
+  background-color: black;
+  width: 13rem;
+  height: 2rem;
+  color: bisque;
+  margin: 1rem 1rem 1rem 1rem;
+}
+
+@media (width < 512px) {
+  .Productos {
+    margin: 1rem;
+    height: max-content;
+  }
+  .Card {
+    height: 14rem;
+    width: 100%;
     display: flex;
-    align-items: center;
-}
-
-@media (width<512px){
-    .Card-Reseñas__User{
-            width:100%;
-            font-size: 1rem;
-            text-align: center;
-    } 
-
-}
-
-#Card-Reseñas__Perfil{
-    background-color: rgb(88, 78, 78);
-    border-radius: 5rem;
-    margin-right: 0.5rem;
-    width: 2rem;
-    height: 2rem;
-}
-
-@media (width<512px){
-    #Card-Reseñas__Perfil{
-        width: 0;
-        height: 0;
-    }
-}
-
-.Etiqueta{
-    background-color: rgb(88, 78, 78);
-    color: beige;
-    width: 7rem;
-    height: 2rem;
-    border-radius: 0.5rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 1rem;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@media (width<512px){
-    .Etiqueta{
-        width: 5rem;
-        font-size: 0.8rem;
-    }
-}
-
-
-
-
-.Card-Reseñas__Texto{
-    padding: 1rem 0rem 1rem 0rem;
-    grid-area: Card-Reseñas__Texto;
-    height: 100%;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.Card-Reseñas__Titulo{
-    padding: 0rem 0rem 1rem 0rem;
-    font-size:1.5rem ;
-    width: 100%;
-    font-weight: bolder;
-}
-
-.Card-Reseñas__Fecha{
-    width: 100%;
-    font-weight: 200;
-}
-
-@media (width<512px){
-    .Card-Reseñas__Texto{
-        padding: 1rem 2rem 1rem 0rem;
-        font-size: 1rem;
-        width: 100%;
-    }
-    .Card-Reseñas__Titulo{
-        padding: 0;
-    }
-    .Card-Reseñas__Fecha{
-        font-size: 0.8rem;
-    }
-    
-}
-
-
-.Estrellas{
-    height: 2rem;
-    width: 100%;
-    margin: 1rem 0rem 1rem 0rem;
-    display: flex;
-    align-items: center;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 1rem;
-}
-
-.Iconos{
-    background-image: url(../Images/Star.svg);
-    background-repeat: no-repeat;
-    height: 2rem;
-    width: 2rem;
-}
-
-
-#Card-Reseñas__Valoracion{
-    font-size: 1rem;
-}
-
-@media (width<512px){
-    #Card-Reseñas__Valoracion{
-        font-size: 0.7rem;
-    }
-}
-
-.Card-Reseñas__TextodeReseña{
-    height: 7rem;
-    width: 100%;
-    overflow: hidden;
-}
-
-
-@media (width<512px){
-    .Estrellas{
-        height: 2rem;
-        font-size: 0.8rem;
-    }
-    .Iconos{
-        height: 1.5rem;
-        width: 1.5rem;
-    }
-    #Card-reseñas__Valoracion{
-        margin-left: 1rem;
-        display: block;
-    }
-    .Card-Reseñas__TextodeReseña{
-        overflow: scroll;
-        height: 8rem;
-    }
-}
-
-
-
-
-.Card-Reseñas__Botones{
-    grid-template-areas: Card-Reseñas__Botones;
-    background-color: rgb(88, 78, 78);
-    border-radius: 0rem 1.25rem 1.25rem 0rem;
+  }
+  .Card-disposicion {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: center;
+  }
+  .Card-Imagen {
+    width: 80%;
+    height: 100%;
+  }
+  .Card-Texto {
+    background-color: none;
+  }
+  .Card-Button {
+    width: 8rem;
+  }
+}
+.Filtros {
+  grid-area: Filtros;
+  height: 50rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-.Deacuerdo{
-    background-color: blanchedalmond;
-    border-radius: 2rem;
-    width: 4rem;
-    height: 4rem;
+.Filtros-apariencia {
+  width: 100%;
+  height: 4rem;
+  padding: 1rem;
+  background-color: beige;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  gap: 1rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
 }
 
-@media (width<512px){
-    .Card-Reseñas__Botones{
-        grid-template-areas: Card-Reseñas__Botones;
-        flex-direction: row;
-        height: 5rem;
-        height: 4rem;
-        padding: 0.5rem;
-        gap: 2rem;
-    }
-
-    .Deacuerdo{
-        width: 2rem ;
-        height: 2rem;
-        border-radius: 0.5rem;
-    }
-}
-
-
-
-
-
-
-
-
-.Comentario{
-    grid-area: Comentario;
-    height:max-content;
-    border-color: rgb(27, 26, 25);
-    border-width: 0.5rem;
-    border-radius: 0.5rem;
-    background-color: beige;
-    padding:2rem;
+@media (width < 512px) {
+  .Filtros {
+    margin: 1rem;
+    height: max-content;
     gap: 1rem;
-    display: flex;
-    flex-direction: column;
+  }
+  .Filtros .Filtros-apariencia {
+    height: 3rem;
+  }
+}
+.icono-carrito {
+  height: 2.5rem;
+  width: 2.5rem;
+  background-image: url(../images/Carrito.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
-.Comentario-titulo{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 2rem;
-    font-weight: bolder;
+.icono-catalogo {
+  height: 2.5rem;
+  width: 2.5rem;
+  background-image: url(../images/Catálogo.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icono-whatsapp {
+  height: 2.5rem;
+  width: 2.5rem;
+  background-image: url(../images/Whatsapp.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.Contenedor-reseñas {
+  display: grid;
+  margin: 0rem 4rem 0rem 4rem;
+  gap: 2rem;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-areas: "    Header Header Header Header Header Header Header Header Header Header " "  Navegacion Navegacion Navegacion Navegacion Navegacion Navegacion Navegacion Navegacion Navegacion Navegacion " "   Seleccionador  Seleccionador  Seleccionador  Seleccionador  Seleccionador  Seleccionador  Seleccionador  Seleccionador  Seleccionador  Seleccionador" "  Reseñas Reseñas Reseñas Reseñas Reseñas Reseñas Reseñas Comentario Comentario Comentario" "   Footer Footer Footer Footer Footer Footer Footer Footer Footer Footer ";
+}
+
+@media (width < 512px) {
+  .Contenedor-reseñas {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: "      Header   " "    Navegacion " "     Comentario " "  Seleccionador" "    Reseñas" "     Footer ";
+    margin: 0;
+    gap: 1rem;
+  }
+}
+@media (width < 1400px) {
+  .Contenedor-reseñas {
+    margin: 2;
+  }
+}
+#Reseñas {
+  grid-area: Reseñas;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (width < 512px) {
+  #Reseñas {
+    gap: 2rem;
+    margin: 1rem;
+  }
+}
+.Card-Reseñas {
+  background-color: rgb(214, 190, 167);
+  width: 100%;
+  height: 18rem;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-areas: "Card-Reseñas__Información Card-Reseñas__Información Card-Reseñas__Texto Card-Reseñas__Texto Card-Reseñas__Texto Card-Reseñas__Texto Card-Reseñas__Botones";
+  border-radius: 1.25rem;
+  gap: 2rem;
+}
+
+@media (width < 512px) {
+  .Card-Reseñas {
+    height: max-content;
+    border-radius: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    grid-template-areas: "Card-Reseñas__Información   Card-Reseñas__Texto       Card-Reseñas__Texto" "Card-Reseñas__Botones       Card-Reseñas__Botones    Card-Reseñas__Botones";
+    border-radius: 1.25rem;
+  }
+}
+.Card-Reseñas__Información {
+  grid-area: Card-Reseñas__Información;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0rem 1.5rem 0rem;
+  justify-content: space-between;
+}
+
+@media (width < 512px) {
+  .Card-Reseñas__Información {
+    padding: 1rem;
+  }
+}
+.Foto-Reseña {
+  background-color: rgb(88, 78, 78);
+  width: 9rem;
+  height: 9rem;
+  border-radius: 10rem;
+  justify-content: center;
+  justify-items: center;
+}
+
+@media (width < 512px) {
+  .Foto-Reseña {
+    border-radius: 1rem;
+    width: 5rem;
+    height: 5rem;
+  }
+}
+.Card-Reseñas__User {
+  width: 10rem;
+  height: 2rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+@media (width < 512px) {
+  .Card-Reseñas__User {
+    width: 100%;
+    font-size: 1rem;
     text-align: center;
-    margin-bottom: 1rem;
-    text-shadow: 0.5;
-    border: 1rem;
-    border-color: black;
+  }
+}
+#Card-Reseñas__Perfil {
+  background-color: rgb(88, 78, 78);
+  border-radius: 5rem;
+  margin-right: 0.5rem;
+  width: 2rem;
+  height: 2rem;
 }
 
+@media (width < 512px) {
+  #Card-Reseñas__Perfil {
+    width: 0;
+    height: 0;
+  }
+}
+.Etiqueta {
+  background-color: rgb(88, 78, 78);
+  color: beige;
+  width: 7rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-.Comentario-perfil{
+@media (width < 512px) {
+  .Etiqueta {
+    width: 5rem;
+    font-size: 0.8rem;
+  }
+}
+.Card-Reseñas__Texto {
+  padding: 1rem 0rem 1rem 0rem;
+  grid-area: Card-Reseñas__Texto;
+  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.Card-Reseñas__Titulo {
+  padding: 0rem 0rem 1rem 0rem;
+  font-size: 1.5rem;
+  width: 100%;
+  font-weight: bolder;
+}
+
+.Card-Reseñas__Fecha {
+  width: 100%;
+  font-weight: 200;
+}
+
+@media (width < 512px) {
+  .Card-Reseñas__Texto {
+    padding: 1rem 2rem 1rem 0rem;
+    font-size: 1rem;
+    width: 100%;
+  }
+  .Card-Reseñas__Titulo {
+    padding: 0;
+  }
+  .Card-Reseñas__Fecha {
+    font-size: 0.8rem;
+  }
+}
+.Estrellas {
+  height: 2rem;
+  width: 100%;
+  margin: 1rem 0rem 1rem 0rem;
+  display: flex;
+  align-items: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+}
+
+.Iconos {
+  background-image: url(../Images/Star.svg);
+  background-repeat: no-repeat;
+  height: 2rem;
+  width: 2rem;
+}
+
+#Card-Reseñas__Valoracion {
+  font-size: 1rem;
+}
+
+@media (width < 512px) {
+  #Card-Reseñas__Valoracion {
+    font-size: 0.7rem;
+  }
+}
+.Card-Reseñas__TextodeReseña {
+  height: 7rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+@media (width < 512px) {
+  .Estrellas {
     height: 2rem;
-    display: flex;
-    gap: 0.5rem;
-}
-
-.Comentario-perfil__foto{
-    background-color: black;
+    font-size: 0.8rem;
+  }
+  .Iconos {
     height: 1.5rem;
     width: 1.5rem;
-    border-radius: 10rem;
-}
-
-#Comentario-Textarea{
+  }
+  #Card-reseñas__Valoracion {
+    margin-left: 1rem;
+    display: block;
+  }
+  .Card-Reseñas__TextodeReseña {
+    overflow: scroll;
     height: 8rem;
-    background-color: rgb(255, 255, 255);
+  }
+}
+.Card-Reseñas__Botones {
+  grid-template-areas: Card-Reseñas__Botones;
+  background-color: rgb(88, 78, 78);
+  border-radius: 0rem 1.25rem 1.25rem 0rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-#Comentario-Boton{
-    color: beige;
-    height: 3rem;
+.Deacuerdo {
+  background-color: blanchedalmond;
+  border-radius: 2rem;
+  width: 4rem;
+  height: 4rem;
+}
+
+@media (width < 512px) {
+  .Card-Reseñas__Botones {
+    grid-template-areas: Card-Reseñas__Botones;
+    flex-direction: row;
+    height: 5rem;
+    height: 4rem;
+    padding: 0.5rem;
+    gap: 2rem;
+  }
+  .Deacuerdo {
+    width: 2rem;
+    height: 2rem;
     border-radius: 0.5rem;
-    background-color: rgb(27, 26, 25);
+  }
+}
+.Comentario {
+  grid-area: Comentario;
+  height: max-content;
+  border-color: rgb(27, 26, 25);
+  border-width: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: beige;
+  padding: 2rem;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
-
-@media (width<512px){
-    .Comentario{
-        gap:1rem;
-        margin:1rem;
-    }
-    .Comentario-titulo{
-        font-size: 1.5rem;
-    }
-    #Comentario-Textarea{
-        height: 6rem;
-    }
-    #
+.Comentario-titulo {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 2rem;
+  font-weight: bolder;
+  text-align: center;
+  margin-bottom: 1rem;
+  text-shadow: 0.5;
+  border: 1rem;
+  border-color: black;
 }
+
+.Comentario-perfil {
+  height: 2rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.Comentario-perfil__foto {
+  background-color: black;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 10rem;
+}
+
+#Comentario-Textarea {
+  height: 8rem;
+  background-color: rgb(255, 255, 255);
+}
+
+#Comentario-Boton {
+  color: beige;
+  height: 3rem;
+  border-radius: 0.5rem;
+  background-color: rgb(27, 26, 25);
+}
+
+@media (width < 512px) {
+  .Comentario {
+    gap: 1rem;
+    margin: 1rem;
+  }
+  .Comentario-titulo {
+    font-size: 1.5rem;
+  }
+  #Comentario-Textarea {
+    height: 6rem;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
