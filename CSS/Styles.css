@@ -10,15 +10,6 @@ a {
   color: beige;
 }
 
-.h1 {
-  font-size: 2.5rem;
-}
-
-.h2 {
-  font-size: 2.25rem;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-
 .h3 {
   font-family: "Courier New", Courier, monospace;
   font-size: 2rem;
@@ -50,7 +41,7 @@ a {
   color: beige;
   list-style: none;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 14x;
+  font-size: 14px;
 }
 
 .Contenedor-Principal {
@@ -63,6 +54,7 @@ a {
 
 @media (width < 512px) {
   .Contenedor-Principal {
+    width: 100%;
     grid-template-columns: repeat(1, 1fr);
     grid-template-areas: "Header" "Section1" "Section2" "Footer";
     margin: 0;
@@ -75,7 +67,7 @@ a {
   }
 }
 .Header {
-  background-color: rgb(60, 54, 46);
+  background-color: #3C362E;
   position: sticky;
   top: 0;
   height: 10vh;
@@ -84,12 +76,13 @@ a {
   justify-content: space-between;
   align-items: center;
   display: grid;
-  grid-template-columns: repeat(2, 2fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-areas: "Header-logo Header-NavBar";
 }
 
 @media (width < 512px) {
   .Header {
+    grid-template-columns: repeat(1, 1fr);
     grid-template-areas: "Header-logo" "Header-NavBar";
     height: 20vh;
     display: flex;
@@ -99,9 +92,7 @@ a {
   }
 }
 .Header-logo {
-  font-family: "Courier New", Courier, monospace;
-  font-size: 1.5rem;
-  color: beige;
+  font: 2rem courier rgb(196, 193, 187);
   width: 12rem;
   height: 2rem;
   margin: 1rem 2rem 1rem 2rem;
@@ -138,7 +129,6 @@ a {
   align-content: center;
   align-items: center;
 }
-
 .Header-Navbar__Navegacion:hover {
   text-decoration: underline;
 }
@@ -162,19 +152,12 @@ a {
 }
 #Principal-Titulo {
   width: 100%;
-  font: 2.5rem bold system-ui;
+  font: 2.5rem light system-ui;
 }
 
-@media (width < 512px) {
-  .h1 {
-    text-align: center;
-    font-size: 2rem;
-  }
-}
 .Principal-Texto {
   width: 100%;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 1.5rem;
+  font: 1.5rem system-ui;
   text-align: left;
   overflow: hidden;
 }
@@ -182,7 +165,11 @@ a {
 @media (width < 512px) {
   .Principal-Texto {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.5rem system-ui;
+  }
+  #Principal-Titulo {
+    text-align: center;
+    font-size: 2rem bolder courier;
   }
 }
 #Principal-Boton {
@@ -191,20 +178,19 @@ a {
   justify-content: end;
 }
 
-#Principal-Boton__detalles:hover {
-  background-color: rgb(10, 196, 196);
-  font-weight: bold;
-}
-
 #Principal-Boton__detalles {
   height: 4rem;
   width: 15rem;
+  border: none;
+  box-shadow: 3px 3px 3px 1.5px rgba(0, 0, 0, 0.2);
   border-radius: 0.5rem;
-  border-style: solid;
-  border-color: black;
-  background-color: black;
-  color: beige;
-  font-size: 1.5rem;
+  background-color: #d7d463;
+  color: black;
+  font: 1.5rem bolder monospace;
+}
+#Principal-Boton__detalles:hover {
+  background-color: #e9e56f;
+  font-weight: bold;
 }
 
 @media (width < 512px) {
@@ -227,10 +213,11 @@ a {
 @media (width < 512px) {
   .Section2 {
     height: max-content;
+    margin: 0rem 1rem 0rem 1rem;
   }
 }
 .Footer {
-  background-color: rgb(60, 54, 46);
+  background-color: #3C362E;
   grid-area: Footer;
   height: 14rem;
   padding: 2rem 4rem 2rem 4rem;
@@ -265,7 +252,7 @@ a {
   border-radius: 1rem;
   height: 10rem;
   width: 18rem;
-  background-color: beige;
+  background-color: rgb(255, 251, 239);
 }
 
 @media (width < 512px) {
@@ -322,6 +309,7 @@ a {
 }
 
 .Navegacion-lista {
+  font: 2.25rem bold system-ui;
   list-style: none;
   height: 4rem;
   gap: 2rem;
@@ -339,10 +327,8 @@ a {
     align-items: center;
     height: 4rem;
   }
-  .h2 {
-    font-size: 2rem;
-  }
   .Navegacion-lista {
+    font: 2rem bolder courier;
     gap: 1rem;
     display: flex;
     justify-content: center;
@@ -355,7 +341,7 @@ hr {
   margin-top: 1rem;
   width: 100%;
   height: 4px;
-  background-color: black;
+  background-color: rgb(59, 59, 59);
 }
 
 @media (width < 512px) {
@@ -366,7 +352,7 @@ hr {
 .Menu1 {
   grid-area: Menu1;
   height: 74rem;
-  background-color: rgb(207, 172, 138);
+  background-color: rgb(160, 141, 141);
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -381,7 +367,7 @@ hr {
   }
 }
 .Menu1-Cafe {
-  background-color: rgb(229, 220, 212);
+  background-color: rgb(255, 251, 239);
   padding: 2rem;
   width: 100%;
   height: 40rem;
@@ -399,36 +385,38 @@ hr {
 .Menu1-Cafe__Product {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 1rem;
   height: 2rem;
   margin: 2rem 2rem 2rem 2rem;
 }
 
 #Menu1-Cafe__Subtitulo {
-  width: 50%;
-  overflow: hidden;
+  display: flex;
   align-content: center;
   color: black;
 }
+#Menu1-Cafe__Subtitulo:hover {
+  width: 40%;
+}
 
 #Menu1-Cafe__Boton {
-  background-color: rgb(81, 76, 69);
-  color: beige;
+  background-color: #d7d463;
+  color: black;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: bold;
   height: 2rem;
-  width: 10rem;
+  width: 8rem;
   border-radius: 1rem;
 }
 
 #Menu1-Cafe__Boton:hover {
-  background-color: rgb(73, 173, 148);
+  background-color: #e9e56f;
 }
 
 .Menu2 {
   height: 74rem;
   grid-area: Menu2;
-  background-color: rgb(207, 172, 138);
+  background-color: rgb(97, 90, 90);
 }
 
 .Contenedor-novedades {
@@ -618,7 +606,7 @@ hr {
 }
 
 .Card-Texto {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font: 14px rgb(196, 193, 187) system-ui;
   display: flex;
   flex-wrap: wrap;
 }
@@ -691,7 +679,7 @@ hr {
   width: 100%;
   height: 4rem;
   padding: 1rem;
-  background-color: beige;
+  background-color: rgb(235, 225, 196);
   display: flex;
   align-items: center;
   justify-items: center;
@@ -771,11 +759,11 @@ hr {
   }
 }
 .Card-Reseñas {
-  background-color: rgb(214, 190, 167);
+  background-color: rgb(235, 225, 196);
   width: 100%;
   height: 18rem;
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, 7fr);
   grid-template-areas: "Card-Reseñas__Información Card-Reseñas__Información Card-Reseñas__Texto Card-Reseñas__Texto Card-Reseñas__Texto Card-Reseñas__Texto Card-Reseñas__Botones";
   border-radius: 1.25rem;
   gap: 2rem;
@@ -785,9 +773,9 @@ hr {
   .Card-Reseñas {
     height: max-content;
     border-radius: 1rem;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 30% 50% 20%;
     gap: 1rem;
-    grid-template-areas: "Card-Reseñas__Información   Card-Reseñas__Texto       Card-Reseñas__Texto" "Card-Reseñas__Botones       Card-Reseñas__Botones    Card-Reseñas__Botones";
+    grid-template-areas: "Card-Reseñas__Información   Card-Reseñas__Texto    Card-Reseñas__Botones";
     border-radius: 1.25rem;
   }
 }
@@ -807,7 +795,7 @@ hr {
   }
 }
 .Foto-Reseña {
-  background-color: rgb(88, 78, 78);
+  background-color: rgb(255, 251, 239);
   width: 9rem;
   height: 9rem;
   border-radius: 10rem;
@@ -838,7 +826,7 @@ hr {
   }
 }
 #Card-Reseñas__Perfil {
-  background-color: rgb(88, 78, 78);
+  background-color: rgb(255, 251, 239);
   border-radius: 5rem;
   margin-right: 0.5rem;
   width: 2rem;
@@ -852,13 +840,12 @@ hr {
   }
 }
 .Etiqueta {
-  background-color: rgb(88, 78, 78);
-  color: beige;
+  background-color: rgb(95, 131, 106);
+  font: lucida 1rem bold;
+  color: white;
   width: 7rem;
   height: 2rem;
   border-radius: 0.5rem;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -893,7 +880,6 @@ hr {
   .Card-Reseñas__Texto {
     padding: 1rem 2rem 1rem 0rem;
     font-size: 1rem;
-    width: 100%;
   }
   .Card-Reseñas__Titulo {
     padding: 0;
@@ -971,10 +957,8 @@ hr {
 
 @media (width < 512px) {
   .Card-Reseñas__Botones {
+    width: 3.5rem;
     grid-template-areas: Card-Reseñas__Botones;
-    flex-direction: row;
-    height: 5rem;
-    height: 4rem;
     padding: 0.5rem;
     gap: 2rem;
   }
@@ -987,10 +971,9 @@ hr {
 .Comentario {
   grid-area: Comentario;
   height: max-content;
-  border-color: rgb(27, 26, 25);
-  border-width: 0.5rem;
-  border-radius: 0.5rem;
-  background-color: beige;
+  background-color: rgb(235, 225, 196);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
   padding: 2rem;
   gap: 1rem;
   display: flex;
@@ -1027,10 +1010,20 @@ hr {
 }
 
 #Comentario-Boton {
-  color: beige;
+  border-style: none;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  font: 1.5rem bolder monospace;
+  color: black;
+  border-color: black;
+  border-style: groove;
+  border-width: 0.15rem;
   height: 3rem;
   border-radius: 0.5rem;
-  background-color: rgb(27, 26, 25);
+  background-color: #d7d463;
+}
+
+#Comentario-Boton:hover {
+  background-color: #e9e56f;
 }
 
 @media (width < 512px) {
