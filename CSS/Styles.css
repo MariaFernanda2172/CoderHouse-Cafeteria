@@ -54,7 +54,6 @@ a {
 
 @media (width < 512px) {
   .Contenedor-Principal {
-    width: 100%;
     grid-template-columns: repeat(1, 1fr);
     grid-template-areas: "Header" "Section1" "Section2" "Footer";
     margin: 0;
@@ -82,7 +81,7 @@ a {
 
 @media (width < 512px) {
   .Header {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 50%);
     grid-template-areas: "Header-logo" "Header-NavBar";
     height: 20vh;
     display: flex;
@@ -139,14 +138,17 @@ a {
   }
 }
 .Section1 {
-  background-color: rgb(110, 196, 196);
+  background-image: url(../images/imagen\ index.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
   grid-area: Section1;
   height: 90vh;
 }
 
 @media (width < 512px) {
   .Section1 {
-    height: 50vh;
+    height: 40vh;
     margin: 0rem 1rem 0rem 1rem;
   }
 }
@@ -165,17 +167,18 @@ a {
 @media (width < 512px) {
   .Principal-Texto {
     text-align: center;
-    font-size: 1.5rem system-ui;
+    font-size: 1rem;
   }
   #Principal-Titulo {
     text-align: center;
-    font-size: 2rem bolder courier;
+    font-size: 1.5rem;
   }
 }
 #Principal-Boton {
   width: 100%;
   display: flex;
   justify-content: end;
+  cursor: pointer;
 }
 
 #Principal-Boton__detalles {
@@ -184,12 +187,13 @@ a {
   border: none;
   box-shadow: 3px 3px 3px 1.5px rgba(0, 0, 0, 0.2);
   border-radius: 0.5rem;
-  background-color: #d7d463;
+  background-color: #6EC4C4;
   color: black;
   font: 1.5rem bolder monospace;
+  cursor: pointer;
 }
 #Principal-Boton__detalles:hover {
-  background-color: #e9e56f;
+  background-color: #6EC4C4;
   font-weight: bold;
 }
 
@@ -198,7 +202,7 @@ a {
     justify-content: center;
   }
   #Principal-Boton__detalles {
-    width: 100%;
+    width: 80%;
   }
 }
 .Section2 {
@@ -290,7 +294,7 @@ a {
 
 @media (width < 512px) {
   .Contenedor-Menú {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 100%;
     grid-template-areas: "   Header  " " Navegacion   " "   Menu1  " "   Menu2  " "   Footer";
     gap: 1rem;
     margin: 0;
@@ -369,7 +373,6 @@ hr {
 .Menu1-Cafe {
   background-color: rgb(255, 251, 239);
   padding: 2rem;
-  width: 100%;
   height: 40rem;
   border-radius: 0.5rem;
 }
@@ -380,37 +383,47 @@ hr {
 
 .Menu1-Cafe__Tittle {
   height: 2rem;
+  width: max-content;
 }
 
 .Menu1-Cafe__Product {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 1rem;
   height: 2rem;
   margin: 2rem 2rem 2rem 2rem;
 }
 
+@media (width < 512px) {
+  .Menu1-Cafe__Product {
+    margin: 2rem 1rem 2rem 2rem;
+  }
+}
 #Menu1-Cafe__Subtitulo {
+  width: max-content;
   display: flex;
   align-content: center;
   color: black;
 }
-#Menu1-Cafe__Subtitulo:hover {
-  width: 40%;
-}
 
+@media (width < 512px) {
+  #Menu1-Cafe__Subtitulo {
+    width: 6rem;
+  }
+}
 #Menu1-Cafe__Boton {
-  background-color: #d7d463;
+  background-color: #6EC4C4;
   color: black;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: bold;
   height: 2rem;
-  width: 8rem;
-  border-radius: 1rem;
+  width: 7rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
 }
-
-#Menu1-Cafe__Boton:hover {
-  background-color: #e9e56f;
+#Menu1-Cafe__Boton_hover {
+  background-color: #6EC4C4;
 }
 
 .Menu2 {
@@ -438,19 +451,89 @@ hr {
   }
 }
 .Carrusel {
-  height: 50vh;
+  height: 70vh;
   grid-area: Carrusel;
-  background-color: aquamarine;
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 @media (width < 512px) {
   .Carrusel {
+    height: 30vh;
     margin: 0rem 1rem 0rem 1rem;
     gap: 1rem;
   }
 }
+.Carrusel-direccion {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Carrusel-direccion:hover {
+  background-color: rgb(241, 241, 241);
+}
+
+.Carrusel-izquierda {
+  background-image: url(../images/LEFT\ Icon.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 5rem;
+  height: 5rem;
+  opacity: 50%;
+}
+.Carrusel-izquierda:hover {
+  opacity: 100%;
+}
+
+.Carrusel-derecha {
+  background-image: url(../images/RIGHT\ icon.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 5rem;
+  height: 5rem;
+  opacity: 50%;
+}
+.Carrusel-derecha:hover {
+  opacity: 100%;
+}
+
+.Carrusel-banner {
+  width: 100%;
+  height: 100%;
+}
+
+.Banner-1 {
+  background-image: url(../images/Banner\ 1.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+.Banner-2 {
+  background-image: url(../images/Banner2.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 100%;
+  height: 10%;
+  opacity: 0;
+}
+
+.Banner-3 {
+  background-image: url(../images/Banner3.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 100%;
+  height: 10%;
+  opacity: 0;
+}
+
 .Suscripcion {
   height: max-content;
   width: 100%;
@@ -468,10 +551,20 @@ hr {
 
 .Suscripcion-Titulo {
   width: 60%;
+  display: flex;
+  flex-direction: column;
   align-content: center;
   justify-content: center;
   text-align: center;
   padding: 0rem 4rem 0rem 4rem;
+}
+
+.Suscripcion-Titulo--T {
+  font: 2.25rem bold system-ui;
+}
+
+.Suscripcion-Titulo--Texto {
+  font: 1.5rem system-ui;
 }
 
 .Suscripcion-imagen {
@@ -527,23 +620,39 @@ hr {
 }
 
 #Suscripcion-boton {
-  width: 10rem;
+  width: 11rem;
   height: 3rem;
   border-radius: 0.5rem;
-  background-color: rgb(29, 27, 27);
-  color: beige;
+  background-color: #6EC4C4;
+  color: black;
   font-size: 1.2rem;
 }
 
 #Suscripcion-boton:hover {
-  background-color: rgb(73, 173, 148);
+  background-color: #6EC4C4;
   font-weight: bolder;
 }
 
 @media (width < 512px) {
   .Suscripcion {
-    margin: 0rem 1rem 0rem 1rem;
+    width: 94%;
+    margin: 1rem;
     gap: 1rem;
+    flex-direction: column;
+    padding: 1rem;
+  }
+}
+@media (width < 512px) {
+  .Suscripcion-Titulo {
+    width: 100%;
+    padding: 1rem;
+  }
+  .Suscripcion-formulario {
+    width: 100%;
+    padding: 1rem 2rem 1rem 2rem;
+  }
+  .Suscripcion-imagen {
+    height: 12rem;
   }
 }
 .Contenedor-productos {
@@ -589,8 +698,8 @@ hr {
 
 .Card {
   width: 15.7rem;
-  height: 25rem;
-  background-color: burlywood;
+  height: max-content;
+  background-color: rgb(235, 225, 196);
   border-radius: 0.5rem;
 }
 
@@ -600,7 +709,7 @@ hr {
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  height: 13rem;
+  height: 15rem;
   border-radius: 0.5rem 0.5rem 0rem 0rem;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
@@ -621,7 +730,8 @@ hr {
 
 .Card-Content {
   font-size: 10px;
-  padding: 0 1rem 1rem 1rem;
+  height: 2rem;
+  padding: 0 1rem 0.5rem 1rem;
 }
 
 .Card-Price {
@@ -632,13 +742,22 @@ hr {
 }
 
 .Card-Button {
-  font-size: 1rem;
+  font-size: 1.5rem bolder monospace;
+  font-weight: bolder;
   text-align: center;
-  background-color: black;
-  width: 13rem;
+  background-color: #6EC4C4;
+  width: 85%;
   height: 2rem;
-  color: bisque;
+  color: 1.5rem bolder monospace;
   margin: 1rem 1rem 1rem 1rem;
+  border: none;
+  border-style: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  cursor: pointer;
+}
+.Card-Button:hover {
+  background-color: #6EC4C4;
 }
 
 @media (width < 512px) {
@@ -655,9 +774,10 @@ hr {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    width: 90%;
   }
   .Card-Imagen {
-    width: 80%;
+    width: 100%;
     height: 100%;
   }
   .Card-Texto {
@@ -805,9 +925,9 @@ hr {
 
 @media (width < 512px) {
   .Foto-Reseña {
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     width: 5rem;
-    height: 5rem;
+    height: 9rem;
   }
 }
 .Card-Reseñas__User {
@@ -940,7 +1060,7 @@ hr {
 }
 .Card-Reseñas__Botones {
   grid-template-areas: Card-Reseñas__Botones;
-  background-color: rgb(88, 78, 78);
+  background-color: rgb(97, 90, 90);
   border-radius: 0rem 1.25rem 1.25rem 0rem;
   display: flex;
   flex-direction: column;
@@ -949,10 +1069,31 @@ hr {
 }
 
 .Deacuerdo {
-  background-color: blanchedalmond;
+  background-image: url(../images/SI\ icon.svg);
+  background-color: rgb(95, 131, 106);
   border-radius: 2rem;
   width: 4rem;
   height: 4rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border-style: solid;
+  border-width: 0.2rem;
+  border-color: rgb(235, 225, 196);
+}
+
+.Desacuerdo {
+  background-image: url(../images/NO\ icon.svg);
+  background-color: rgb(114, 78, 78);
+  border-radius: 2rem;
+  width: 4rem;
+  height: 4rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  border-style: solid;
+  border-width: 0.2rem;
+  border-color: rgb(235, 225, 196);
 }
 
 @media (width < 512px) {
@@ -963,6 +1104,11 @@ hr {
     gap: 2rem;
   }
   .Deacuerdo {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+  }
+  .Desacuerdo {
     width: 2rem;
     height: 2rem;
     border-radius: 0.5rem;
@@ -986,9 +1132,7 @@ hr {
   font-weight: bolder;
   text-align: center;
   margin-bottom: 1rem;
-  text-shadow: 0.5;
   border: 1rem;
-  border-color: black;
 }
 
 .Comentario-perfil {
@@ -1007,23 +1151,22 @@ hr {
 #Comentario-Textarea {
   height: 8rem;
   background-color: rgb(255, 255, 255);
+  border-radius: 0.5rem;
+  padding: 1rem;
 }
 
 #Comentario-Boton {
   border-style: none;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   font: 1.5rem bolder monospace;
   color: black;
-  border-color: black;
-  border-style: groove;
-  border-width: 0.15rem;
   height: 3rem;
   border-radius: 0.5rem;
-  background-color: #d7d463;
+  background-color: #6EC4C4;
+  cursor: pointer;
 }
 
 #Comentario-Boton:hover {
-  background-color: #e9e56f;
+  background-color: #6EC4C4;
 }
 
 @media (width < 512px) {

@@ -74,7 +74,6 @@ a{
 
 @media (width<512px) {
     .Contenedor-Principal{
-        width: 100%;
         grid-template-columns: repeat(1,1fr);
         grid-template-areas: 
         "Header"
@@ -114,7 +113,7 @@ a{
 
 @media (width<512px) {
     .Header{
-        grid-template-columns: repeat(1,1fr);
+        grid-template-columns: repeat(1,50%);
         grid-template-areas:
         "Header-logo"
         "Header-NavBar";
@@ -191,7 +190,10 @@ a{
 
 
 .Section1{
-    background-color: rgb(110, 196, 196);
+    background-image: url(../images/imagen\ index.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
     grid-area: Section1 ;
     height: 90vh;
 }
@@ -200,17 +202,11 @@ a{
 @media (width<512px) {
 
     .Section1{
-        height: 50vh;
+        height: 40vh;
         margin: 0rem 1rem 0rem 1rem;
     }
 
 }
-
-
-
-
-
-
 
 
 #Principal-Titulo{
@@ -228,11 +224,11 @@ a{
 @media(width<512px){
     .Principal-Texto{
         text-align: center;
-        font-size: variables.$font_H4;
+        font-size: 1rem;
     }
     #Principal-Titulo{
         text-align: center;
-        font-size: variables.$font_H3;
+        font-size: 1.5rem;
     }
 }
 
@@ -240,6 +236,7 @@ a{
     width: 100%;
     display: flex;
     justify-content: end;
+    cursor:pointer;
 }
 
 #Principal-Boton__detalles{
@@ -251,6 +248,7 @@ a{
     background-color: variables.$acent_color;
     color: variables.$font_color;
     font:variables.$font_button;
+    cursor: pointer;
 
     &:hover{
         background-color: variables.$acent_color-2;
@@ -263,7 +261,7 @@ a{
         justify-content: center;
     }
     #Principal-Boton__detalles{
-        width: 100%;
+        width: 80%;
     }
 }
 
@@ -394,7 +392,7 @@ a{
 @media (width<512px){
 
     .Contenedor-Menú{
-        grid-template-columns: repeat(1,1fr);
+        grid-template-columns: 100%;
         grid-template-areas: 
         "   Header  "
         " Navegacion   "
@@ -489,7 +487,6 @@ hr{
 .Menu1-Cafe{
     background-color: variables.$secondary_color-2;
     padding: 2rem;
-    width: 100%;
     height: 40rem;
     border-radius: 0.5rem;
 }
@@ -499,27 +496,38 @@ hr{
 }
 .Menu1-Cafe__Tittle{
     height: 2rem;
+    width: max-content;
 }
 
 .Menu1-Cafe__Product{
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 1rem;
     height: 2rem;
     margin: 2rem 2rem 2rem 2rem ;
 
 }
 
-#Menu1-Cafe__Subtitulo{
+@media (width<512px){
+    .Menu1-Cafe__Product{
+        margin: 2rem 1rem 2rem 2rem;
+    }
+}
 
+#Menu1-Cafe__Subtitulo{
+    width: max-content;
     display: flex;
     align-content: center;
     color: black;
-    &:hover{
-        width: 40%;
-    }
-
 }
+
+@media (width<512px){
+    #Menu1-Cafe__Subtitulo{
+        width: 6rem;
+    }
+}
+
 
 #Menu1-Cafe__Boton{
     background-color: variables.$acent_color;
@@ -527,12 +535,12 @@ hr{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: bold;
     height: 2rem;
-    width: 8rem;
-    border-radius: 1rem;
-}
-
-#Menu1-Cafe__Boton:hover{
-    background-color: variables.$acent_color-2;
+    width: 7rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    &_hover{
+        background-color: variables.$acent_color-2;
+    }
 }
 
 .Menu2{
@@ -596,20 +604,93 @@ hr{
 
 
 .Carrusel{
-    height: 50vh;
+    height: 70vh;
     grid-area: Carrusel;
-    background-color: aquamarine;
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
+
 }
 
 @media (width<512px){
     .Carrusel{
+        height: 30vh;
         margin: 0rem 1rem 0rem 1rem;
         gap:1rem
     }
 }
 
+.Carrusel-direccion{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover{
+        background-color: rgb(241, 241, 241);
+    }
+
+}
+
+.Carrusel-izquierda{
+    background-image: url(../images/LEFT\ Icon.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 5rem;
+    height: 5rem;
+    opacity: 50%;
+    &:hover{
+        opacity: 100%;
+    }
+
+}
+
+.Carrusel-derecha{
+    background-image: url(../images/RIGHT\ icon.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 5rem;
+    height: 5rem;
+    opacity: 50%;
+    &:hover{
+        opacity: 100%;
+}
+}
+
+
+.Carrusel-banner{
+    width: 100%;
+    height: 100%;
+}
+
+.Banner-1{
+    background-image: url(../images/Banner\ 1.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+.Banner-2{
+    background-image: url(../images/Banner2.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    height: 10%;
+    opacity: 0;
+}
+
+.Banner-3{
+    background-image: url(../images/Banner3.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    height: 10%;
+    opacity: 0;
+}
 
 
 //NOVEDADES - SUSCRPCION
@@ -633,10 +714,19 @@ hr{
 
 .Suscripcion-Titulo{
     width: 60%;
+    display: flex;
+    flex-direction: column;
     align-content:center;
     justify-content: center;
     text-align: center;
     padding: 0rem 4rem 0rem 4rem;
+}
+
+.Suscripcion-Titulo--T{
+    font: variables.$font_H2;
+}
+.Suscripcion-Titulo--Texto{
+    font: variables.$font_H4;
 }
 
 .Suscripcion-imagen{
@@ -692,28 +782,44 @@ hr{
 }
 
 #Suscripcion-boton{
-    width: 10rem;
+    width: 11rem;
     height: 3rem;
     border-radius: 0.5rem;
-    background-color: rgb(29, 27, 27);
-    color: beige;
+    background-color: variables.$acent_color;
+    color: variables.$font_color;
     font-size: 1.2rem;
 }
 
 #Suscripcion-boton:hover{
-    background-color: rgb(73, 173, 148);
+    background-color: variables.$acent_color-2;
     font-weight: bolder;
 }
 
 @media(width<512px){
     .Suscripcion{
-        margin: 0rem 1rem 0rem 1rem;
+        width: 94%;
+        margin: 1rem;
         gap: 1rem;
+        flex-direction: column;
+        padding:1rem;
     }
 }
 
 
+@media(width<512px){
 
+    .Suscripcion-Titulo{
+        width: 100%;
+        padding: 1rem;
+    }
+    .Suscripcion-formulario{
+        width: 100%;
+        padding: 1rem 2rem 1rem 2rem;
+    }
+    .Suscripcion-imagen{
+        height: 12rem;
+    }
+}
 
 
 
@@ -800,8 +906,8 @@ hr{
 
 .Card{
     width: 15.7rem;
-    height: 25rem;
-    background-color: burlywood;
+    height: max-content;
+    background-color: variables.$secondary_color;
     border-radius: 0.5rem;
 }
 
@@ -811,7 +917,7 @@ hr{
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
-    height: 13rem;
+    height: 15rem;
     border-radius: 0.5rem 0.5rem 0rem 0rem;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
@@ -833,7 +939,8 @@ hr{
 
 .Card-Content{
     font-size: 10px;
-    padding: 0 1rem 1rem 1rem;
+    height: 2rem;
+    padding: 0 1rem 0.5rem 1rem;
 }
 
 .Card-Price{
@@ -844,13 +951,24 @@ hr{
 }
 
 .Card-Button{
-    font-size: 1rem;
+    font-size: variables.$font_button;
+    font-weight: bolder;
     text-align: center;
-    background-color:black;
-    width: 13rem;
+    background-color:variables.$acent_color;
+    width: 85%;
     height: 2rem;
-    color: bisque;
+    color: variables.$font_button;
     margin: 1rem 1rem 1rem 1rem;
+    border: none;
+    border-style: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+
+    &:hover{
+        background-color: variables.$acent_color-2;
+    }
+
+    cursor:pointer ;
 }
 
 @media (width<512px){
@@ -869,10 +987,11 @@ hr{
         display: flex;
         flex-direction: column;
         justify-content:space-evenly;
+        width: 90%;
     }
 
     .Card-Imagen{
-        width: 80%;
+        width: 100%;
         height: 100%
         
     }
@@ -1076,9 +1195,9 @@ hr{
 
 @media (width<512px){
     .Foto-Reseña{
-        border-radius: 1rem;
+        border-radius: 0.5rem;
         width: 5rem;
-        height: 5rem;
+        height: 9rem;
     }
 }
 
@@ -1224,7 +1343,7 @@ hr{
 
 .Card-Reseñas__Botones{
     grid-template-areas: Card-Reseñas__Botones;
-    background-color: rgb(88, 78, 78);
+    background-color:  variables.$primary_color-2;;
     border-radius: 0rem 1.25rem 1.25rem 0rem;
     display: flex;
     flex-direction: column;
@@ -1233,10 +1352,32 @@ hr{
 }
 
 .Deacuerdo{
-    background-color: blanchedalmond;
+    background-image: url(../images/SI\ icon.svg);
+    background-color: variables.$Success_color;
     border-radius: 2rem;
     width: 4rem;
     height: 4rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    border-style: solid;
+    border-width: 0.2rem;;
+    border-color: variables.$secondary_color;
+}
+
+.Desacuerdo{
+    background-image: url(../images/NO\ icon.svg);
+    background-color: variables.$error_color;
+    border-radius: 2rem;
+    width: 4rem;
+    height: 4rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    border-style: solid;
+    border-width: 0.2rem;;
+    border-color: variables.$secondary_color;
+
 }
 
 @media (width<512px){
@@ -1251,6 +1392,13 @@ hr{
         width: 2rem ;
         height: 2rem;
         border-radius: 0.5rem;
+    }
+
+    .Desacuerdo{
+        width: 2rem ;
+        height: 2rem;
+        border-radius: 0.5rem;
+
     }
 }
 
@@ -1278,10 +1426,11 @@ hr{
     font-weight: bolder;
     text-align: center;
     margin-bottom: 1rem;
-    text-shadow: 0.5;
     border: 1rem;
-    border-color: black;
 }
+
+
+
 
 .Comentario-perfil{
     height: 2rem;
@@ -1296,22 +1445,23 @@ hr{
     border-radius: 10rem;
 }
 
+
 #Comentario-Textarea{
     height: 8rem;
     background-color: rgb(255, 255, 255);
+    border-radius: 0.5rem;
+    padding: 1rem;
 }
 
 #Comentario-Boton{
     border-style: none;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     font: variables.$font_button;
     color: variables.$font_color;
-    border-color: black;
-    border-style:groove;
-    border-width: 0.15rem;
     height: 3rem;
     border-radius: 0.5rem;
     background-color: variables.$acent_color;
+    cursor: pointer;
+
 
 
 }
