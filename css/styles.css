@@ -704,7 +704,7 @@ hr {
 }
 
 .Card-Imagen {
-  background-image: url(../images/producto3.jpg);
+  background-image: url(../images/producto\ cafe\ final.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
